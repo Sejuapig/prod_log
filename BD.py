@@ -5,13 +5,9 @@ db = conn.connect(host="infoweb",user="E145465P", password="mdp",database="E1454
 
 curseur = db.cursor()
 
-query = "create or replace table données"
+query = "CREATE TABLE IF NOT EXISTS(id INT PRIMARY KEY NOT NULL)"
 
 curseur.execute(query)
 
-result = curseur.fetchall()
-
-for row in result:
-    print(row)
     
 db.close()
