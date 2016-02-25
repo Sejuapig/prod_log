@@ -15,5 +15,4 @@ curseur.execute(cr_tb_install)
 curseur.execute(cr_tb_equip)
 curseur.execute(cr_tb_act)
 
-    
 db.close()

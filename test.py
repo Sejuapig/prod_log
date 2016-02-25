@@ -5,12 +5,13 @@ db = conn.connect(host="infoweb",user="E145465P", password="mdp",database="E1454
 
 curseur = db.cursor()
 
-cr_tb_test = "CREATE TABLE IF NOT EXISTS test42(id INT PRIMARY KEY NOT NULL)"
+cr_tb_test = "CREATE TABLE IF NOT EXISTS test42(id INT PRIMARY KEY)"
 
-#curseur.execute(cr_tb_test)
+curseur.execute(cr_tb_test)
 
-add_install= "INSERT INTO test42(id) VALUES(42)"
-
+add_install = "INSERT INTO test42(id) VALUES(42)"
+print(add_install)
 curseur.execute(add_install)
+db.commit()
 
 db.close()

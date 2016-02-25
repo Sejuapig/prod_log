@@ -2,7 +2,6 @@ import csv
 def read(path):
     fichier = csv.reader(open(path,"rt"), delimiter=',')
 
-    
     for row in fichier:
         print(row[2], row[4],row[5]) #id, code et libelle
         

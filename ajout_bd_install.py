@@ -9,8 +9,9 @@ db = conn.connect(host="infoweb",user="E145465P", password="mdp",database="E1454
 curseur = db.cursor()
 
 for row in tableau:
-    add_install= "INSERT INTO installation (id, nom, adresse, code_postal, ville, latitude, longitude) VALUES(%s, %s, %s, %s,%s, %s,%s)"
+    add_install= "INSERT IGNORE INTO installation (id, nom, adresse, code_postal, ville, latitude, longitude) VALUES(%s, %s, %s, %s,%s, %s,%s)"
     data= (row[0], row[1], row[2], row[3],row[4], row[5],row[6])
     curseur.execute(add_install, data)
-    
+
+db.commit()
 db.close()

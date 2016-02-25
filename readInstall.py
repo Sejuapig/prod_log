@@ -9,7 +9,7 @@ def read(path):
     tableau= []
         
     for row in fichier:
-       tableau.append([row[1],row[0],row[7],row[4],row[2],row[9],row[10]]) #numero et nom et coordonées
+       tableau.append([row[1],row[0],row[7],row[4],row[2],row[9],row[10]]) #numero, nom et coordonées
     
     
     return tableau[1:]
