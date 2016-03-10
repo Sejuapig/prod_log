@@ -8,10 +8,10 @@ def lunch():
 	create.lunch()
 
 	print('add equipment in the database')
-	equip.lunch()
+	#equip.lunch()
 
 	print('add activity in the database')
-	act.lunch()
+	#act.lunch()
 
 	print('add installation in the database')
 	inst.lunch()
