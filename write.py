@@ -1,2 +1,0 @@
-import readEquipement, readInstall, readActivite
-
