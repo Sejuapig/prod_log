@@ -1,20 +1,16 @@
 #!/usr/bin/python
-import mysql.connector as conn
-import readActivite as act
-import connexion as co
+import readFile.readActivite as act
+import admin.connexion as co
 
-def lunch():
-	tableau = act.lunch()
+def run():
+	tableau = act.run()
+	db, curseur =co.run()
 
-	#db = conn.connect(host="infoweb",user="E145465P", password="mdp",database="E145465P")
-	db =co.connexion()
-
-	curseur = db.cursor()
+	add_act= "INSERT INTO activity (id, code, nom) VALUES(?,?,?)"
 
 	for row in tableau:
-	    add_act= "INSERT IGNORE INTO activity (id, code, nom) VALUES(%s, %s, %s)"
-	    data= (row[0], row[1], row[2])
-	    curseur.execute(add_act, data)
+		data= (row[0], row[1], row[2])
+		curseur.execute(add_act, data)
 
 	db.commit()
 	db.close()
