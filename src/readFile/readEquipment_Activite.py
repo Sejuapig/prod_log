@@ -9,7 +9,7 @@ def read(path):
 	tableau = []
 
 	for row in fichier:
-		tableau.append([row[4], row[5]]) #id et libelle   
+		tableau.append([row[4], row[2]]) #id de l'activité et id de l'équipement   
 	return tableau[1:]
 
 if __name__ == '__main__':

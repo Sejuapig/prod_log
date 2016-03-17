@@ -8,7 +8,7 @@ def read(path):
 	tableau =[]
 	
 	for row in fichier:
-		tableau.append([row[4],row[3],row[2]]) #id et nom et id installation
+		tableau.append([row[4],row[3], row[2]]) #id et nom 
 	return tableau[1:]
 
 if __name__ == '__main__':
