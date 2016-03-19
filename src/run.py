@@ -25,8 +25,5 @@ def run():
 	#print('test Server')
 	#serv.run()
 
-
-
-
 if __name__ == '__main__':
 	run()
