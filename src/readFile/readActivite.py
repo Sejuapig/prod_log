@@ -13,4 +13,4 @@ def read(path):
 	return tableau[1:]
 
 if __name__ == '__main__':
-	read("../../../Production_logiciel/csvFiles/activites.csv")
+	read("../../Production_logiciel/csvFiles/activites.csv")
