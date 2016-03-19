@@ -1,7 +1,7 @@
 import csv
 
 def run():
-	return read("/hometu/etudiants/m/e/E145465P/info2/prod_log/Production_logiciel/csvFiles/Installations.csv")
+	return read("../../Production_logiciel/csvFiles/Installations.csv")
 	 
 def read(path):
 	fichier = csv.reader(open(path,"rt"), delimiter=',')
@@ -14,4 +14,4 @@ def read(path):
 	return tableau[1:]
 
 if __name__ == '__main__':
-	read("/hometu/etudiants/m/e/E145465P/info2/prod_log/Production_logiciel/csvFiles/Installations.csv")
+	read("/../../../Production_logiciel/csvFiles/Installations.csv")

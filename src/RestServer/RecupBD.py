@@ -1,5 +1,5 @@
 import admin.connexion as co
-from bson.json_util import dumps
+#from bson.json_util import dumps
 
 def run():
 	db, curseur = co.run()

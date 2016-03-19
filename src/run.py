@@ -22,8 +22,8 @@ def run():
 	print('add equipment_activity in the database')
 	equip_act.run()
 
-	print('test Server')
-	serv.run()
+	#print('test Server')
+	#serv.run()
 
 
 
