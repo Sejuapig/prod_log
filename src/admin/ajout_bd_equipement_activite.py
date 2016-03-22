@@ -7,7 +7,7 @@ def run():
 
 	db, curseur =co.run()
 
-	add= "INSERT OR IGNORE INTO equipment_activity(id_equipment, id_activity) VALUES(?,?)"
+	add= "INSERT OR IGNORE INTO equipment_activity0(id_equipment, id_activity) VALUES(?,?)"
 
 	for row in tableau:
 		data= (row[0], row[1])

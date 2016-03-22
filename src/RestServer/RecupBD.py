@@ -4,17 +4,24 @@ import admin.connexion as co
 def run():
 	db, curseur = co.run()
 
-	activity = []
-	equipment = []
-	installation = []
+	curseur.execute("select * from activity")
+	activity = curseur.fetchall()
 
-	activity = curseur.execute("select * from activity")
 	equipment = curseur.execute("select * from equipment")
-	installation = curseur.execute("select * from installation")
+	equipment = curseur.fetchall()
 
-	dumps(activity)
-	dumps(equipment)
-	dumps(installation)
+	installation = curseur.execute("select * from installation")
+	installation = curseur.fetchall()
+
+	for row in activity:
+		print(row)
+
+	for row in installation:
+		print(row)
+		
+	#dumps(activity)
+	#dumps(equipment)
+	#dumps(installation)
 
 	return (activity, equipment, installation)
 
