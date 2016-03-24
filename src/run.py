@@ -5,25 +5,29 @@ import admin.ajout_bd_equipement_activite as equip_act
 import admin.cr_tb_bd as create
 
 import RestServer.RecupBD as serv
+#import RestServer.rest_PDL as pdl
 
 def run():
 	print('create database')
-	#create.run()
+	create.run()
 
 	print('add equipment in the database')
-	#equip.run()
+	equip.run()
 
 	print('add activity in the database')
-	#act.run()
+	act.run()
 
 	print('add installation in the database')
-	#inst.run()
+	inst.run()
 
 	print('add equipment_activity in the database')
-	#equip_act.run()
+	equip_act.run()
+
+	print('test bd')
+	serv.run()
 
 	#print('test Server')
-	serv.run()
+	#pdl.index()
 
 if __name__ == '__main__':
 	run()

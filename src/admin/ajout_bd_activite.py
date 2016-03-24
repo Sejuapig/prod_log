@@ -3,6 +3,7 @@ import readFile.readActivite as act
 import admin.connexion as co
 
 def run():
+	
 	tableau = act.run()
 	db, curseur =co.run()
 
