@@ -9,19 +9,19 @@ import RestServer.RecupBD as serv
 
 def run():
 	print('create database')
-	create.run()
+	#create.run()
 
 	print('add equipment in the database')
-	equip.run()
+	#equip.run()
 
 	print('add activity in the database')
-	act.run()
+	#act.run()
 
 	print('add installation in the database')
-	inst.run()
+	#inst.run()
 
 	print('add equipment_activity in the database')
-	equip_act.run()
+	#equip_act.run()
 
 	print('test bd')
 	serv.run()

@@ -3,7 +3,7 @@ import RestServer.RecupBD as bd
 
 @route('/')
 def index():
-	activity, equipment, installation = bd.run()
+	activity, equipment, installation, equipment_activity = bd.run()
 	html = 'Voici les installations sportives du Pays de la Loire :'
 	
 
