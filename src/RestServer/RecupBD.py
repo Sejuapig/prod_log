@@ -59,7 +59,11 @@ def run():
 	equipment_activity = json.dumps(list_equipment_activity)
 
 	
-
+	activity = json.loads(activity)
+	equipment = json.loads(equipment)
+	installation = json.loads(installation)
+	equipment_activity = json.loads(equipment_activity)
+	
 	return (activity, equipment, installation, equipment_activity)
 
 if __name__ == '__main__':

@@ -5,7 +5,6 @@ import admin.ajout_bd_equipement_activite as equip_act
 import admin.cr_tb_bd as create
 
 import RestServer.RecupBD as serv
-#import RestServer.rest_PDL as pdl
 
 def run():
 	print('create database')
@@ -24,10 +23,12 @@ def run():
 	#equip_act.run()
 
 	print('test bd')
-	serv.run()
+	#serv.run()
 
 	#print('test Server')
 	#pdl.index()
+	import RestServer.rest_PDL as pdl
+
 
 if __name__ == '__main__':
 	run()
