@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import readFile.readEquipement as equip
+import readFile.readEquipment as equip
 import admin.connexion as co
 
 def run():

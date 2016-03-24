@@ -1,7 +1,6 @@
 import admin.connexion as co
 import json
 import collections
-#from bson.json_util import dumps
 
 def run():
 	db, curseur = co.run()
@@ -52,13 +51,10 @@ def run():
 		d['id_activity']  = row[1]
 		list_equipment_activity.append(d)
 
-	print('--------------------------------------------')
 	activity = json.dumps(list_activity)
 	equipment = json.dumps(list_equipment)
 	installation = json.dumps(list_installation)
 	equipment_activity = json.dumps(list_equipment_activity)
-
-	
 
 	return (activity, equipment, installation, equipment_activity)
 

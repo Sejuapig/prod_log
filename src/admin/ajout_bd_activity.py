@@ -1,17 +1,17 @@
 #!/usr/bin/python
-import readFile.readEquipment_Activite as act
+import readFile.readActivity as act
 import admin.connexion as co
 
 def run():
+	
 	tableau = act.run()
-
 	db, curseur =co.run()
 
-	add= "INSERT OR IGNORE INTO equipment_activity(id_equipment, id_activity) VALUES(?,?)"
+	add_act= "INSERT OR IGNORE INTO activity(id_activity, nom_activity) VALUES(?,?)"
 
 	for row in tableau:
 		data= (row[0], row[1])
-		curseur.execute(add, data)
-	    
+		curseur.execute(add_act, data)
+
 	db.commit()
 	db.close()
