@@ -64,5 +64,7 @@ def run():
 	
 	return (activity, equipment, installation, equipment_activity)
 
+def 
+
 if __name__ == '__main__':
 	run()

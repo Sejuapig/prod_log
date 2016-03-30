@@ -1,0 +1,24 @@
+@route('/site/activites')
+def todo_list():
+        act = allActivities()
+        return act
+
+@route('/site/activites/<ville>')
+def getAct(ville):
+        act = uneActivite(ville)
+        return act
+
+@route('/site/activites/<ville>/<activite>')
+def getAct(ville,activite):
+        act = activite_ville_sur_carte(ville,activite)
+        return act
+
+@route('/')
+def server_static():
+    return static_file("saisirCommune.html", root="./")
+
+@route('/<filename:path>')
+def server_static2(filename):
+    return static_file(filename, root="./")
+
+run(host='localhost', port=8080, debug=True)
