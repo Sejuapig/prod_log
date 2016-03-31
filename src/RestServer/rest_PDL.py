@@ -5,11 +5,10 @@ import cgi
 
 @route('/')
 def server_static():
-	print("salut")
 	return static_file("html.html", root='./RestServer/')
-	activity, equipment, installation, equipment_activity = bd.run()
 
-@route('/site/activitesg/<ville>')
+
+@route('/site/activite/<ville>')
 def getAct(ville):
         act = bd.activites(ville)
         return act

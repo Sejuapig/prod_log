@@ -1,6 +1,6 @@
 import unittest,sys
-sys.path.append("/hometu/etudiants/m/e/E145465P/info2/prod_log/")
-import Td1
+import connexion as co
+
 
 class premierTest(unittest.TestCase):
         """
@@ -8,28 +8,14 @@ class premierTest(unittest.TestCase):
         """
 
         def test0(self):
+                bd, cursor = co.run()
+                cursor.execute("SELECT id_activity FROM activity where nom_activity ='Triathlon'")
+                id = cursor.fetchone()
                 """
-                test avec 0
+                test 0
                 """
-                self.assertFalse(Td1.premier(0))
+                self.assertEquals(8301, id)
 
-        def test1(self):
-                """
-                test avec 1
-                """
-                self.assertFalse(Td1.premier(1))
-
-        def test2(self):
-                """
-                test avec un nombre premier
-                """
-                self.assertTrue(Td1.premier(5))
-
-        def test3(self):
-                """
-                test avec un nombre non premier autre que 1
-                """
-                self.assertFalse(Td1.premier(9))
                 
 if __name__ == '__main__':
         unittest.main()

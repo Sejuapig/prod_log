@@ -64,7 +64,21 @@ def run():
 	
 	return (activity, equipment, installation, equipment_activity)
 
-def 
+def activites(ville):
+	db, curseur = co.run()
+
+	curseur.execute("select * from activity")
+	activity = curseur.fetchall()
+
+	list_activity = []
+	for row in activity:
+		d = collections.OrderedDict()
+		d['id_activity'] = row[0]
+		d['nom_activity'] = row[1]
+		list_activity.append(d)
+		activity = json.dumps(list_activity)
+		activity = json.loads(activity)
+		return activity
 
 if __name__ == '__main__':
 	run()

@@ -4,7 +4,8 @@ $(document).ready(function(){
 	$("#submit").click(function()
 	{ 
 	$.ajax({       
-			url : "site/activites/"+ $('#commune').val(),       
+			console.log('ajax')
+			url : "site/activite/"+ $('#commune').val(),       
 			type : 'GET',       
 			dataType : 'json',      
 			success : function(data){
@@ -24,7 +25,7 @@ $(document).ready(function(){
  	$("#submitCartes").click(function()
 	{ 
 	$.ajax({       
-			url : "site/activites/"+ $('#commune').val()+"/"+$('#carte').val(),       
+			url : "site/activite/"+ $('#commune').val()+"/"+$('#carte').val(),       
 			type : 'GET',       
 			dataType : 'json',      
 			success : function(data){
