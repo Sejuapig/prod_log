@@ -3,6 +3,7 @@ import readFile.readEquipment_Activity as act
 import admin.connexion as co
 
 def run():
+	"""Function allowing you to insert the equipment_activity table data in the database"""
 	tableau = act.run()
 
 	db, curseur =co.run()

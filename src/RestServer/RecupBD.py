@@ -3,6 +3,7 @@ import json
 import collections
 
 def run():
+	"""Function allowing you to collect data from the tables of the database and then parse it into json arrays and finally returning it"""
 	db, curseur = co.run()
 
 	curseur.execute("select * from activity")
@@ -65,6 +66,7 @@ def run():
 	return (activity, equipment, installation, equipment_activity)
 
 def activites(ville):
+	"""Function allowing you to collect data from the table activity of the database for a given city and then parse it into json arrays and finally returning it"""
 	db, curseur = co.run()
 
 	curseur.execute("select * from activity")

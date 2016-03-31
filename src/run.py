@@ -7,6 +7,7 @@ import admin.cr_tb_bd as create
 import RestServer.RecupBD as serv
 
 def run():
+	"""Main function allowing you to run the different parts of our application"""
 	print('create database')
 	#create.run()
 

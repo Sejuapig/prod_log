@@ -1,3 +1,0 @@
-1) La base de donnée
-	-Tables/ Colonnes
-	-Cles (Primaire/ étrangère)  --> Lien entre les Tables	--> Srcipt SQL MYSQL

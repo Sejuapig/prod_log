@@ -2,6 +2,7 @@
 import admin.connexion as co
 
 def run():
+	"""Function allowing you to create the tables in the database"""
 	db, curseur = co.run()
 
 	curseur.execute("DROP TABLE IF EXISTS installation")

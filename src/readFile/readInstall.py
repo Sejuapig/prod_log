@@ -1,9 +1,11 @@
 import csv
 
 def run():
+	"""Function allowing you to return the .csv data in an array"""
 	return read("../../Production_logiciel/csvFiles/Installations.csv")
 	 
 def read(path):
+	""""Function allowing you to read the .csv files in the path and collect the rows wanted"""
 	fichier = csv.reader(open(path,"rt"), delimiter=',')
 	
 	tableau= []

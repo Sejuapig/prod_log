@@ -3,6 +3,7 @@ import readFile.readInstall as inst
 import admin.connexion as co
 
 def run():
+	"""Function allowing you to insert the installation table data in the database"""
 	tableau = inst.run()
 
 	db, curseur = co.run()

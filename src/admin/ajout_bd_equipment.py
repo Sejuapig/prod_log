@@ -3,6 +3,7 @@ import readFile.readEquipment as equip
 import admin.connexion as co
 
 def run():
+	"""Function allowing you to insert the equipment table data in the database"""
 	tableau = equip.run()
 
 	db, curseur =co.run()
