@@ -12,7 +12,13 @@ def server_static():
 @route('/site/activite')
 def getAct():
 	"""Function allowing you return the activities of the database for a given city when you connect to the route"""
+	sport = request.query.sport
 	commune = request.query.commune
+	if(sport =="waloo"):
+
+	if(commune ==""):
+		
+
 	installation = bd.installation(commune)
 	
 	list_installation = [] 
@@ -26,6 +32,6 @@ def parseAct(activity):
 	return activity['id_activity'], activity['nom_activity']
 
 
-
-
 run(host='localhost', port=8070)
+
+"""select * from installation, activity, equipment, equipment_activity where installation.ville = "Nantes" and equipment.id_installation = installation.id_installation and equipment_activity.id_equipment = equipment.id_equipment and equipment_activity.id_activity = activity.id_activity and activity.nom_activity = "football";"""
