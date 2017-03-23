@@ -89,8 +89,6 @@ def installation(ville):
 	for row in installation:
 		list_installation.append(row)
 
-	print(list_installation)
-
 	return json.dumps(installation)
 
 if __name__ == '__main__':
