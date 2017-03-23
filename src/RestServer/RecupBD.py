@@ -85,11 +85,9 @@ def installation(ville):
 	cursor.execute(selectQuery)
 	installation = cursor.fetchall()
 
-	list_installation = [] 
-	for row in installation:
-		list_installation.append(row)
 
-	return json.dumps(installation)
+
+	return installation
 
 if __name__ == '__main__':
 	run()
