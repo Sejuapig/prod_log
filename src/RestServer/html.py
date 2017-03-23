@@ -10,7 +10,7 @@ def genereEnteteHtml():
 def genereBody(str):
 	"""Function allowing you to generate the body of the html website"""
 	body=html("<body>")
-	body+=html("<form action="/hometu/etudiants/a/b/E145725x/2Annee/python/Production_logiciel/src/RestServer/" method="POST">")
+	body+=html("<form action="/hometu/etudiants/a/b/E145725x/2Annee/python/prod_log/src/RestServer/" method="POST">")
 	body+=html("Veuillez entrer une commune : <input id="commune" type="text" name="commune"> </br>")
 	body+=html("<input type="submit" value="Envoyer"/>") 
 	body+=html("</form>")

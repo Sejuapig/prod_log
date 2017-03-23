@@ -2,7 +2,7 @@ import csv
 
 def run():
 	"""Function allowing you to return the .csv data in an array"""
-	return read("../../Production_logiciel/csvFiles/Installations.csv")
+	return read("../../prod_log/csvFiles/Installations.csv")
 	 
 def read(path):
 	""""Function allowing you to read the .csv files in the path and collect the rows wanted"""
@@ -16,4 +16,4 @@ def read(path):
 	return tableau[1:]
 
 if __name__ == '__main__':
-	read("../../Production_logiciel/csvFiles/Installations.csv")
+	read("../../prod_log/csvFiles/Installations.csv")
