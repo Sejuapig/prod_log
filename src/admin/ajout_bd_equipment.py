@@ -14,7 +14,10 @@ def run():
 
 	for row in tableau:
 		data= (row[0], row[1], row[2])
-		cursor.execute(insertQuery, data)
+		try:
+			cursor.execute(insertQuery,data)
+		except MySQLdb.Error as e :
+			print(e)
 	    
 	conn.commit()
 	conn.close()
