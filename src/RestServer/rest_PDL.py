@@ -1,4 +1,3 @@
-from RestServer.libs.bottle import route, static_file, run, request
 from RestServer.libs.bottle import *
 from urllib.parse import urlencode
 from urllib import request as urllibrequest
@@ -40,11 +39,6 @@ def getAct():
 		for row in installation:
 			list_installation.append({"id_installation" : row[0], "nom_installation" : row[1], "adresse" : row[2], "code_postal" : row[3], "ville" : row[4], "latitude" : row[5], "longitude" : row[6]})
 
-	if(len(list_installation) == 0):
-		return "Aucune ativité disponible."
-	else:
-		return json.dumps(list_installation)
-
 	API_KEY = "VUKSyIY4sVm2supyeSGPtZvm5m1E33Mi"
 
 	try:
@@ -64,5 +58,10 @@ def getAct():
 		print(jsonData['results'][0]['locations'][0]['latLng'])
 	except Exception as err:
 		print("Unexpected error: {0}".format(err))
+
+	if(len(list_installation) == 0):
+		return "Aucune ativité disponible."
+	else:
+		return json.dumps(list_installation)
 
 run(host='localhost', port=8070)
