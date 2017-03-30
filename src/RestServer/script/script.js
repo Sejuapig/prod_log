@@ -24,7 +24,7 @@ $(document).ready(function(){
 
  	$("#submitCartes").click(function()
 	{ 
-	$.ajax({       
+		$.ajax({       
 			url : "site/activite/"+ $('#commune').val()+"/"+$('#carte').val(),       
 			type : 'GET',       
 			dataType : 'json',      
