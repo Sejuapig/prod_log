@@ -13,7 +13,7 @@ def run():
 	insertQuery= "INSERT IGNORE INTO installation (id_installation, nom_installation, adresse, code_postal, ville, latitude, longitude) VALUES(?,?,?,?,?,?,?)"
 
 	for row in tableau:
-		data= (row[0], row[1], row[2], row[3],row[4], row[5],row[6])
+		data = (row[0], row[1], row[2], row[3],row[4], row[5],row[6])
 		try:
 			cursor.execute(insertQuery, data)
 		except MySQLdb.Error as e :

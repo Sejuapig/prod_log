@@ -21,7 +21,6 @@ def installation(ville):
 
 	cursor.execute(selectQuery)
 	installation = cursor.fetchall()
-	print(installation)
 	return installation
 
 def sport(sport):
@@ -33,7 +32,6 @@ def sport(sport):
 
 	cursor.execute(selectQuery)
 	installation = cursor.fetchall()
-	print(installation)
 	return installation
 
 def sport_installation(ville, sport):
@@ -45,7 +43,6 @@ def sport_installation(ville, sport):
 
 	cursor.execute(selectQuery)
 	installation = cursor.fetchall()
-	print(installation)
 	return installation
 
 

@@ -1,4 +1,4 @@
-from RestServer.libs.bottle import *
+from RestServer.libs.bottle import route, static_file, run, request
 import RestServer.RecupBD as bd
 import json
 import cgi
@@ -19,7 +19,6 @@ def getAct():
 	sport = request.query.sport
 	commune = request.query.commune
 	if(sport =="waloo"):
-<<<<<<< HEAD
 		installation = bd.installation(commune)
 		list_installation = []
 		for row in installation:
@@ -47,25 +46,3 @@ def getAct():
 		return json.dumps(list_installation)
 
 run(host='localhost', port=8070)
-=======
-
-	if(commune ==""):
-		
-
-	installation = bd.installation(commune)
-	
-	list_installation = [] 
-	for row in installation:
-		list_installation.append({"id_installation" : row[0], "nom_installation" : row[1], "adresse" : row[2], "code_postal" : row[3], "ville" : row[4], "latitude" : row[5], "longitude" : row[6]})
-
-	return json.dumps(list_installation)
-
-
-def parseAct(activity):
-	return activity['id_activity'], activity['nom_activity']
-
-
-run(host='localhost', port=8070)
-
-"""select * from installation, activity, equipment, equipment_activity where installation.ville = "Nantes" and equipment.id_installation = installation.id_installation and equipment_activity.id_equipment = equipment.id_equipment and equipment_activity.id_activity = activity.id_activity and activity.nom_activity = "football";"""
->>>>>>> 8fb9aafabea0afcfbea0d4d5c954c097e475aa6c

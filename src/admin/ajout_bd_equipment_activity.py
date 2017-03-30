@@ -17,13 +17,8 @@ def run():
 		try :
 			data = (row[1], row[0])
 			cursor.execute(insertQuery, data)
-<<<<<<< HEAD
 		except MySQLdb.Error as e :
 			print(e)
-=======
-		except mysql.connector.errors.IntegrityError as err:
-			 print("Error: {}".format(err))
->>>>>>> 8fb9aafabea0afcfbea0d4d5c954c097e475aa6c
-
+			
 	conn.commit()
 	conn.close()
