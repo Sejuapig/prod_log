@@ -39,12 +39,14 @@ def getAct():
 		for row in installation:
 			list_installation.append({"id_installation" : row[0], "nom_installation" : row[1], "adresse" : row[2], "code_postal" : row[3], "ville" : row[4], "latitude" : row[5], "longitude" : row[6]})
 
+	#Clé API Google map :  AIzaSyAV5H8jgF1rKLszZfpRbhP7hivmsgAryY0 
+
 	API_KEY = "VUKSyIY4sVm2supyeSGPtZvm5m1E33Mi"
 
 	try:
 		proxy_host = 'proxyetu.iut-nantes.univ-nantes.prive:3128'
 
-		urlParams = {'location': commune, 'key': API_KEY, 'inFormat':'kvp', 'outFormat':'json'}
+		urlParams = {'location': commune, 'key': 'VUKSyIY4sVm2supyeSGPtZvm5m1E33Mi', 'inFormat':'kvp', 'outFormat':'json'}
 		url = "http://www.mapquestapi.com/geocoding/v1/address?" + urlencode(urlParams)
 
 		req = urllibrequest.Request(url)
@@ -55,13 +57,23 @@ def getAct():
 		data = resp.read().decode('utf8')
 		jsonData = json.loads(data)
 		# FIXME le print n'est pas très secure...
-		print(jsonData['results'][0]['locations'][0]['latLng'])
+		lat = jsonData['results'][0]['locations'][0]['latLng']['lat']
+		lng = jsonData['results'][0]['locations'][0]['latLng']['lng']
+		print('latitude : ' + str(lat))
+		print('longitude : ' + str(lng))
 	except Exception as err:
 		print("Unexpected error: {0}".format(err))
 
 	if(len(list_installation) == 0):
 		return "Aucune ativité disponible."
 	else:
-		return json.dumps(list_installation)
+		tous = json.dumps(list_installation)
+		jsonEnForme = ""
+		for i in range(0,len(list_installation)) :
+			jsonEnForme += json.dumps("Nom de l'installation : " + list_installation[i]['nom_installation'] + '</br>' + "Adresse : " + list_installation[i]['adresse'] + '</br>' + "Code postal : " + list_installation[i]['code_postal'] + '</br>' + "Id : " + str(list_installation[i]['id_installation']) + '</br>' + "Latitude : " + str(list_installation[i]['latitude']) + '</br>' + "Longitude : " + str(list_installation[i]['longitude'])) + '</br>' + '</br>'
+
+	#print(jsonEnForme)
+	return jsonEnForme
+	#return static_file("map.html", root='./RestServer/')
 
 run(host='localhost', port=8070)
