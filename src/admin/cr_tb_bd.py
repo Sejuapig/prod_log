@@ -3,6 +3,7 @@
 import admin.connexion as connexion
 
 def run():
+	"""Function allowing you to create all the tables of the project and their relations on the database"""
 	conn = connexion.connexion()
 	cursor = conn.cursor()
 
