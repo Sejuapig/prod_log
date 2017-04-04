@@ -17,8 +17,8 @@ def getAct():
 	"""Function allowing you return the activities of the database for a given city when you connect to the route"""
 	commune = request.query.commune
 	sport = request.query.sport
-	
-	if(sport =="waloo"):
+
+	if(sport =="Aucun"):
 		installation = bd.installation(commune)
 		list_installation = []
 		for row in installation:
@@ -30,16 +30,16 @@ def getAct():
 		for row in installation:
 			list_installation.append({"id_installation" : row[0], "nom_installation" : row[1], "adresse" : row[2], "code_postal" : row[3], "ville" : row[4], "latitude" : row[5], "longitude" : row[6]})
 
-	if(commune =="" and sport =="waloo"):
+	if(commune =="" and sport == "Aucun"):
 		return "Veuillez selectionner au moins une commune ou un sport."
-		
-	if(sport != "waloo" and commune != ""):
+
+	if(sport != "Aucun" and commune != ""):
 		installation = bd.sport_installation(commune, sport)
 		list_installation = []
 		for row in installation:
 			list_installation.append({"id_installation" : row[0], "nom_installation" : row[1], "adresse" : row[2], "code_postal" : row[3], "ville" : row[4], "latitude" : row[5], "longitude" : row[6]})
 
-	#Clé API Google map :  AIzaSyAV5H8jgF1rKLszZfpRbhP7hivmsgAryY0 
+	#Clé API Google map :  AIzaSyAV5H8jgF1rKLszZfpRbhP7hivmsgAryY0
 
 	API_KEY = "VUKSyIY4sVm2supyeSGPtZvm5m1E33Mi"
 

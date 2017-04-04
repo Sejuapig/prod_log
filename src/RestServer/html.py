@@ -12,10 +12,10 @@ def genereBody(str):
 	body=html("<body>")
 	body+=html("<form action="/hometu/etudiants/a/b/E145725x/2Annee/python/prod_log/src/RestServer/" method="POST">")
 	body+=html("Veuillez entrer une commune : <input id="commune" type="text" name="commune"> </br>")
-	body+=html("<input type="submit" value="Envoyer"/>") 
+	body+=html("<input type="submit" value="Envoyer"/>")
 	body+=html("</form>")
 	return body
-	
+
 def generePied():
 	"""Function allowing you to generate the footer of the html website"""
 	pied=html("</body>")
